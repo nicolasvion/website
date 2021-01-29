@@ -93,7 +93,7 @@ disqusShortname = "Nicolas VION"
             [[languages.en.menu.main]]
             name = "About"
             weight = 1
-            url = "static/cv/cv_nicolasvion.pdf"
+            url = "cv/cv_nicolasvion.pdf"
 
             [[languages.en.menu.main]]
             name = "Blog"
