@@ -79,7 +79,7 @@ disqusShortname = "Nicolas VION"
     name = "RSS"
     icon = "fa fa-rss"
     weight = 6
-    url = "https://nicolasvion.fr/index.xml"
+    url = "/index.xml"
     rel = "alternate"
     type = "application/rss+xml"
 
