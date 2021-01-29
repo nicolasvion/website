@@ -21,7 +21,7 @@ disqusShortname = "Nicolas VION"
     keywords = "blog,developer,personal"
     info = "DevOps"
     avatarURL = "images/avatar.png"
-    footerContent = "Welcome on this blog !"
+    footerContent = "Welcome !"
 
     dateFormat = "January 2, 2006"
 
