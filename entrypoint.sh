@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Download website sources
-git clone $1 www
+git clone --depth 1 $1 www
 
 # Build site
 /usr/bin/hugo -D -s /src/www
