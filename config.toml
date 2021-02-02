@@ -22,7 +22,7 @@ disqusShortname = "Nicolas VION"
     info = "DevOps"
     avatarURL = "images/avatar.png"
     footerContent = "A Devops' Blog"
-
+    disableComments = true
     dateFormat = "January 2, 2006"
 
     hideFooter = false
