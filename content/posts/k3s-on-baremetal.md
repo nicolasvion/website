@@ -90,7 +90,7 @@ allow k8s pod to run:
 We will now deploy the ingress controller. I prefer to use nginx because this is
 the ingress I am the most familiar with. We will use the Helm chart with the
 following
-[values](https://github.com/nicolasvion/k3s-blog-configs/ingress-nginx/values.yaml):
+[values](https://github.com/nicolasvion/k3s-blog-configs/blob/main/ingress-nginx/values.yaml):
 
 ```bash
 kubectl create ns ingress-nginx
@@ -121,7 +121,7 @@ nginx-ingress-nginx-controller             LoadBalancer   10.43.162.28    8.8.8.
 
 To serve our website, we will use the HTTPS protocol. We will need a SSL
 Certificate. To do this, we will use cert-manager with the following
-[crds file](https://github.com/nicolasvion/k3s-blog-configs/cert-manager/cert-manager.crds.yaml):
+[crds file](https://github.com/nicolasvion/k3s-blog-configs/blob/main/cert-manager/cert-manager.crds.yaml):
 
 ```bash
 kubectl create ns cert-manager
@@ -145,7 +145,7 @@ cert-manager-webhook-787858fcdb-nlzsq      1/1     Running   0          2m
 ```
 
 Finally, we will create our
-[cluster-issuer](https://github.com/nicolasvion/k3s-blog-configs/cert-manager/cluster-issuer.yaml):
+[cluster-issuer](https://github.com/nicolasvion/k3s-blog-configs/blob/main/cert-manager/cluster-issuer.yaml):
 
 ```bash
 # Please change the e-mail
@@ -174,9 +174,9 @@ below):
 generator built in go.
 
 We will then create a
-[deployment](https://github.com/nicolasvion/k3s-blog-configs/app/deployment.yaml)
+[deployment](https://github.com/nicolasvion/k3s-blog-configs/blob/main/app/deployment.yaml)
 and an [ingress
-entry](https://github.com/nicolasvion/k3s-blog-configs/app/ingress.yaml):
+entry](https://github.com/nicolasvion/k3s-blog-configs/app/blob/main/ingress.yaml):
 
 ```bash
 # Please change hostname in the ingress.yaml file
