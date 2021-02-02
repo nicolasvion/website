@@ -21,7 +21,7 @@ disqusShortname = "Nicolas VION"
     keywords = "devops,developper,kubernetes,aws,azure,ansible,kubectl,helm,docker"
     info = "DevOps"
     avatarURL = "images/avatar.png"
-    footerContent = "Welcome !"
+    footerContent = "A Devops' Blog"
 
     dateFormat = "January 2, 2006"
 
