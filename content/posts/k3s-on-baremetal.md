@@ -5,7 +5,7 @@ title = "Install Kubernetes with k3s on a BareMetal Server for your blog"
 description = "Install Kubernetes with k3s on a BareMetal Server for your blog"
 slug = ""
 authors = ["Nicolas VION"]
-tags = ["kubernetes, "k3s","devops","ingress","cert-manager","hugo", "docker",
+tags = ["kubernetes", "k3s","devops","ingress","cert-manager","hugo", "docker",
 "helm", "kubectl"]
 categories = ["kubernetes", "k3s","devops","ingress","cert-manager","hugo",
 "docker", "helm, kubectl"]
