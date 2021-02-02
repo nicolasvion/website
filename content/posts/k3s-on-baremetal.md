@@ -5,8 +5,10 @@ title = "Install Kubernetes with k3s on a BareMetal Server for your blog"
 description = "Install Kubernetes with k3s on a BareMetal Server for your blog"
 slug = ""
 authors = ["Nicolas VION"]
-tags = ["k3s","devops","ingress","cert-manager","hugo"]
-categories = ["k3s","devops","ingress","cert-manager","hugo"]
+tags = ["kubernetes, "k3s","devops","ingress","cert-manager","hugo", "docker",
+"helm", "kubectl"]
+categories = ["kubernetes", "k3s","devops","ingress","cert-manager","hugo",
+"docker", "helm, kubectl"]
 externalLink = ""
 series = []
 +++
@@ -17,7 +19,15 @@ This article will present you how to install a blog with Hugo on a Kubernetes
 Cluster with k3s on a BareMetal Server. This documentation is using an **Ubuntu
 Server 20.04**.
 
+Sources:
+  * [k3s](https://k3s.io/)
+  * [ingress nginx](https://github.com/kubernetes/ingress-nginx/tree/master/charts/ingress-nginx)
+  * [cert manager](https://cert-manager.io/docs/installation/kubernetes/)
+  * [hugo](https://github.com/gohugoio/hugo)
+
 # Target
+
+![Infrastructure Target](images/setup_a_blog_on_k3s.png)
 
 # Kubernetes Installation
 
@@ -159,6 +169,9 @@ below):
 ```
 
 # Docker image for Hugo
+
+[Hugo](https://github.com/gohugoio/hugo) is a fast and flexible static site
+generator built in go.
 
 We will then create a
 [deployment](https://github.com/nicolasvion/k3s-blog-configs/app/deployment.yaml)
