@@ -185,7 +185,7 @@ kubectl -n www apply -f ./deployment.yaml
 kubectl -n www apply -f ./ingress.yaml
 ```
 
-> Note: a custom image has been built. This image will download the website on a
+> **Note**: A custom image has been built. This image will download the website on a
 given URL and generate the static content with hugo, and finally serve it with
 nginx. Sources can be found [here](https://github.com/nicolasvion/website/blob/main/Dockerfile)
 
@@ -206,7 +206,7 @@ NAME                 CLASS    HOSTS            ADDRESS        PORTS     AGE
 mywebsite-com-ing    <none>   mywebsite.com    8.8.8.8        80, 443   4d16h
 ```
 
-> Note: if you want to update your website content, you just have to **update your
+> **Note**: If you want to update your website content, you just have to **update your
 git repo** (the docker image will build it and run it) and **delete your pods** with
 the following command:
 
