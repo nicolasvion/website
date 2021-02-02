@@ -27,7 +27,7 @@ Sources:
 
 # Target
 
-![Infrastructure Target](images/setup_a_blog_on_k3s.png)
+![Infrastructure Target](../../images/setup_a_blog_on_k3s.png)
 
 # Kubernetes Installation
 
