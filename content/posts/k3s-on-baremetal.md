@@ -176,7 +176,7 @@ generator built in go.
 We will then create a
 [deployment](https://github.com/nicolasvion/k3s-blog-configs/blob/main/app/deployment.yaml)
 and an [ingress
-entry](https://github.com/nicolasvion/k3s-blog-configs/app/blob/main/ingress.yaml):
+entry](https://github.com/nicolasvion/k3s-blog-configs/blob/main/app/ingress.yaml):
 
 ```bash
 # Please change hostname in the ingress.yaml file
