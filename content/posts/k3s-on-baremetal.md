@@ -37,7 +37,7 @@ First of all, we will install Kubernetes with k3s:
 curl -sfL https://get.k3s.io | sh -
 ```
 
-And we will modify the ** ** file with the following content:
+And we will modify the **/etc/systemd/system/k3s.service** file with the following content:
 ```yaml
 ExecStart=/usr/local/bin/k3s \
     server \
