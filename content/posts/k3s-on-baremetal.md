@@ -17,7 +17,7 @@ series = []
 
 This article will present you how to install a blog with Hugo on a Kubernetes
 Cluster with k3s on a BareMetal Server. This documentation is using an **Ubuntu
-Server 20.04**.
+Server 20.04** on [Scaleway's Platform](https://www.scaleway.com/en/)
 
 Sources:
   * [k3s](https://k3s.io/)
