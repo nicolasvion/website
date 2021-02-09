@@ -13,20 +13,28 @@ series = []
 
 # Introduction
 
-This article will present you some advanced techniques using Git.
+This article will present you some advanced techniques using Git:
+  * Squash our last commits together
+      * Rebase method
+          * TIP: Undo a rebase
+      * Squash method
+          * TIP: Merge into master with new commits on this branch
 
 # Squash you commits !
 
 Imagine you have the following git repository:
+  * **2 branches**:
+      * **master** : 2 commits
+      * **bug_fix** : 3 commits
 
 ![Git Squash](../../images/git_squash_01.png)
 
-We want to merge all your commits in the bug_fix branches. We have two
+We want to merge all our commits in the bug_fix branches. We have two
 solutions :
-  * rebase
-  * merge --squash
+  * **rebase**
+  * **merge --squash**
 
-## Rebase
+## Rebase method
 
 The first solution uses **rebase**. Here is how to proceed:
 
@@ -61,7 +69,9 @@ Finally, we can push our branch:
 git push origin --force bug_fix
 ```
 
-### Undo a rebase
+### TIP: Undo a rebase
+
+We will use the **reflog** command to identify where to reset our branch:
 
 ```bash
 git reflog
@@ -84,7 +94,7 @@ bc4e2e5 HEAD@{8}: commit: Accessibility bug fix
 028c30c HEAD@{11}: commit (initial): m1
 ```
 
-In our case:
+In our case, we want to apply the commit "Added comments & updated README":
 
 ```bash
 git reset --hard HEAD@{4}
@@ -101,13 +111,13 @@ bc4e2e5 Accessibility bug fix [Nicolas VION]
 028c30c m1 [Nicolas VION]
 ```
 
-To come back to the origin HEAD:
+To come back to the origin HEAD (rebase origin state):
 
 ```bash
 git reset --hard ORIG_HEAD
 ```
 
-## Merge
+## Merge Method
 
 We start with reseting the current branch to the commit before the last 3:
 
@@ -140,14 +150,14 @@ git ls
 028c30c m1 [Nicolas VION]
 ```
 
-First, we need to get the last commit:
+First, we need to get the last commit of the master branch:
 
 ```bash
 git checkout bug_fix
 git rebase -i master
 ```
 
-**Result**:
+Result of the **bug_fix branch**:
 
 ```bash
 git ls
@@ -157,14 +167,15 @@ git ls
 028c30c m1 [Nicolas VION]
 ```
 
-Finally, we merge into master:
+Finally, we merge into master. Please note that we need to be in the **target
+branch**:
 
 ```bash
 git checkout master
 git merge bug_fix
 ```
 
-**Result**:
+Result of the **master branch**:
 
 ```bash
 git ls
@@ -173,3 +184,14 @@ git ls
 6bf1ea6 m2 [Nicolas VION]
 028c30c m1 [Nicolas VION]
 ```
+
+Finally, we can push our branch:
+
+```bash
+git push origin --force bug_fix
+```
+
+> **Note**: you can use **--force-with-lease** instead of **--force**. This
+> option allow to not override our friends' commits in case of error.
+
+![Git push force](../../images/git_push_force.jpg)
