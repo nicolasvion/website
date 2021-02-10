@@ -18,11 +18,11 @@ This article will present you some advanced techniques using Git:
       * Rebase method
           * TIP: Undo a rebase
       * Squash method
-          * TIP: Merge into master with new commits on this branch
+          * TIP: Merge into master with new commits on the master branch
 
 # Squash you commits !
 
-Imagine you have the following git repository:
+Imagine we have the following git repository:
   * **2 branches**:
       * **master** : 2 commits
       * **bug_fix** : 3 commits
@@ -32,7 +32,7 @@ Imagine you have the following git repository:
 We want to merge all our commits in the bug_fix branches. We have two
 solutions :
   * **rebase**
-  * **merge --squash**
+  * **merge - -squash**
 
 ## Rebase method
 
@@ -119,7 +119,7 @@ git reset --hard ORIG_HEAD
 
 ## Merge Method
 
-We start with reseting the current branch to the commit before the last 3:
+We will start with reseting the current branch to the commit before the last 3:
 
 ```bash
 git reset --hard HEAD~3
@@ -192,6 +192,6 @@ git push origin --force bug_fix
 ```
 
 > **Note**: you can use **--force-with-lease** instead of **--force**. This
-> option allow to not override our friends' commits in case of error.
+> option allows to not override our friends' commits in case of error.
 
 ![Git push force](../../images/git_push_force.jpg)
