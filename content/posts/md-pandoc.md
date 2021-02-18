@@ -1,0 +1,72 @@
++++
+draft = true
+date = 2021-02-17T21:38:38Z
+title = "Markdown to PDF using Pandoc"
+description = "Markdown to PDF using Pandoc"
+slug = ""
+authors = ["Nicolas VION"]
+tags = ["markdown", "pandoc", "pdf", "presentation", "beamer", "latex"]
+categories = ["markdown", "pandoc", "pdf", "presentation", "beamer", "latex"]
+externalLink = ""
+series = []
++++
+
+# Introduction
+
+This posts will explain how to:
+  * Create a presentation in **Markdown** using **Beamer** and **Pandoc**
+  * Create a PDF documentation in **Markdown** using **Pandoc** and **Latex**
+
+# Create a presentation in Markdown with Beamer
+
+## Prerequisites
+
+First of all, we will install these dependencies:
+
+```bash
+# software
+brew install pandoc gnu-sed
+brew cask install basictex
+
+# latex packages
+sudo tlmgr install titlesec background everypage pgfopts
+```
+
+Then, we will installed this excellent
+[theme](https://github.com/matze/mtheme):
+
+```bash
+git clone https://github.com/matze/mtheme.git
+cd mtheme && make sty
+mkdir -p ~/Library/texmf/tex/latex/metropolis
+mv *.sty ~/Library/texmf/tex/latex/metropolis
+```
+
+## Markdown content
+
+We create a file with the following content:
+
+```markdown
+---
+title:
+- Presentation
+author:
+- Nicolas VION
+theme:
+- metropolis
+---
+
+# Introduction
+
+# Slide 1
+
+## Sub Section 1
+
+* List 1
+```
+
+To generate the presentation:
+
+```bash
+pandoc file.md -t beamer -o file.pdf
+```
