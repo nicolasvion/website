@@ -58,8 +58,6 @@ theme:
 
 # Introduction
 
-# Slide 1
-
 ## Sub Section 1
 
 * List 1
@@ -70,3 +68,22 @@ To generate the presentation:
 ```bash
 pandoc file.md -t beamer -o file.pdf
 ```
+
+**Result**:
+
+![Presentation from MD](../../images/md_presentation.png)
+
+# Create a documentation in Markdown with Latex
+
+First of all, we will clone this
+[template](https://github.com/nicolasvion/docker/tree/master/doc-as-code):
+
+```bash
+git clone https://github.com/nicolasvion/docker/
+cd doc-as-code
+for file in src/*; do make $(basename $file); done
+```
+
+**Result**:
+
+https://github.com/nicolasvion/docker/blob/master/doc-as-code/out/notes-2018-02-28.pdf
